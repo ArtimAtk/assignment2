@@ -11,8 +11,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
-            <h1><%= title %></h1>
-            <form class="form" method="post">
+            <div class="row">
+                <div class="col-md-12 text-center"><h1><%= title %></h1></div>
+            </div>
+            <form class="form well" method="post">
                 <div class="form-group">
                     <label for="contactNameField">Contact Name</label>
                     <input type="text" class="form-control" id="contactNameField"
@@ -31,8 +33,15 @@
                            placeholder="Email" name="email" value="<%= businessContacts.email %>" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
-                <a href="/businessContacts" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check-square-o"></i> Submit
+                </button>
+                <a href="/businessContacts" class="btn btn-warning">
+                    <i class="fa fa-undo"></i> Cancel
+                </a>
+                <a href="/businessContacts/delete/<%= businessContacts._id %>" class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i> Delete
+                </a>
             </form>
         </div>
     </div>

@@ -53,7 +53,7 @@ router.get('/:id', requireAuth, (req, res, next) => {
                 res.end(error);
             } else {
                 // show the businessContacts details view
-                res.render('businessContacts/details', {
+                res.render('businessContacts/update', {
                     title: 'Business Contact Details',
                     businessContacts: businessContacts,
                     displayName: req.user.displayName
