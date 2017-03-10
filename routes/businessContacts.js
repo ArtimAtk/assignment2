@@ -25,18 +25,19 @@ let requireAuth = (req, res, next) => {
 /* GET business contacts List page */
 router.get('/', requireAuth, (req, res, next) => {
     // find all contacts in the businessContacts collection
-    businessContacts.find((err, businessContacts) => {
-        if (err) {
-            return console.error(err);
-        }
-        else {
-            res.render('businessContacts/index', {
-                title: 'Business Contacts',
-                businessContacts: businessContacts,
-                displayName: req.user.displayName
-            });
-        }
-    });
+    businessContacts.find({}).sort('contactName').exec(
+        (err, businessContacts) => {
+            if (err) {
+                return console.error(err);
+            }
+            else {
+                res.render('businessContacts/index', {
+                    title: 'Business Contacts',
+                    businessContacts: businessContacts,
+                    displayName: req.user.displayName
+                });
+            }
+        });
 });
 
 // GET the Business Contact Details page in order to edit an existing contact
