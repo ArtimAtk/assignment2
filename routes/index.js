@@ -24,20 +24,23 @@ router.get('/', (req, res, next) => {
 router.get('/about', (req, res, next) => {
     res.render('index', {
         title: 'About',
+        displayName: req.user ? req.user.displayName : ''
     });
 });
 
 /* GET products page. */
 router.get('/projects', (req, res, next) => {
     res.render('index', {
-        title: 'Projects'
+        title: 'Projects',
+        displayName: req.user ? req.user.displayName : ''
     });
 });
 
 /* GET services page. */
 router.get('/services', (req, res, next) => {
     res.render('index', {
-        title: 'Services'
+        title: 'Services',
+        displayName: req.user ? req.user.displayName : ''
     });
 });
 
@@ -45,6 +48,7 @@ router.get('/services', (req, res, next) => {
 router.get('/contact', (req, res, next) => {
     res.render('index', {
         title: 'Contact',
+        displayName: req.user ? req.user.displayName : '',
         messageSent: false
     });
 });
@@ -81,6 +85,7 @@ router.post('/contact', (req, res, next) => {
         if (error) {
             res.render('index', {
                 title: 'Contact',
+                displayName: req.user ? req.user.displayName : '',
                 messageSent: true,
                 error: true
             })
@@ -89,6 +94,7 @@ router.post('/contact', (req, res, next) => {
         else {
             res.render('index', {
                 title: 'Contact',
+                displayName: req.user ? req.user.displayName : '',
                 messageSent: true,
                 error: false
             })
