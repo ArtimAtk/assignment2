@@ -1,8 +1,8 @@
 <!--/**-->
 <!--* @author Liavontsi Brechka-->
 <!--* @studentID 300800345-->
-<!--* @date April 10, 2017-->
-<!--* @description Personal Portfolio websit component-->
+<!--* @date March 6, 2017-->
+<!--* @description Personal Portfolio website component with Business Contact List – Authentication-->
 <!--*/-->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"><i class="fa fa-fort-awesome"></i> Software Developer Portfolio</a>
+        <a class="navbar-brand" href="/"><i class="fa fa-fort-awesome"></i> Personal Portfolio</a>
     </div>
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -66,12 +66,12 @@
             <% } %>
 
             <% if(typeof displayName == 'string' && displayName) { %>
-            <% if(title == "books") { %>
-            <li class="active"><a href="/books"><i class="fa fa-book fa-lg">
-                    </i> Books List</a></li>
+            <% if(title == "businessContacts") { %>
+            <li class="active"><a href="/businessContacts"><i class="fa fa-book fa-lg">
+                    </i> Business Contacts List</a></li>
             <% } else { %>
-            <li><a href="/books"><i class="fa fa-book fa-lg">
-                    </i> Books List</a></li>
+            <li><a href="/businessContacts"><i class="fa fa-book fa-lg">
+                    </i> Business Contacts List</a></li>
             <% } %>
             <% } %>
         </ul>
