@@ -1,0 +1,18 @@
+<!--/**-->
+<!--* @author Liavontsi Brechka-->
+<!--* @studentID 300800345-->
+<!--* @date April 10, 2017-->
+<!--* @description Personal Portfolio websit component-->
+<!--*/-->
+<!--Main content decision making-->
+<% if (title === 'About') { %>
+<% include ../content/about.ejs %>
+<% } else if (title === 'Projects') { %>
+<% include ../content/projects/projects.ejs %>
+<% } else if (title === 'Services') { %>
+<% include ../content/services.ejs %>
+<% } else if (title === 'Contact') { %>
+<% include ../content/contact.ejs %>
+<% } else { %>
+<% include ../content/home.ejs %>
+<% } %>

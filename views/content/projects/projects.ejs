@@ -1,0 +1,30 @@
+<!--/**-->
+<!--* @author Liavontsi Brechka-->
+<!--* @studentID 300800345-->
+<!--* @date April 10, 2017-->
+<!--* @description Personal Portfolio websit component-->
+<!--*/-->
+<!-- MAIN CONTENT -->
+<div class="container">
+    <!--Title-->
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 text-center">
+            <h1><%= title %></h1>
+            <p>For more source code go to
+                <a href="https://github.com/LeontiBrechko" target="_blank">GitHub profile</a></p>
+        </div>
+    </div>
+    <!--Projects-->
+    <div class="row well">
+        <div class="col-md-4">
+            <% include project1.ejs %>
+        </div>
+        <div class="col-md-4">
+            <% include project2.ejs %>
+        </div>
+        <div class="col-md-4">
+            <% include project3.ejs %>
+        </div>
+    </div>
+</div>
+
