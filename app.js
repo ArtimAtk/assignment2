@@ -20,6 +20,20 @@ let passportlocal = require('passport-local');
 let flash = require('connect-flash');
 let LocalStrategy = passportlocal.Strategy;
 
+// import "mongoose" - required for DB Access
+let mongoose = require('mongoose');
+// URI
+let config = require('./config/db');
+
+mongoose.connect(process.env.URI || config.URI);
+
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+    console.log("Conneced to MongoDB...");
+});
+
+// define routers
 let index = require('./routes/index');
 
 let app = express();
@@ -54,6 +68,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// route redirects
 app.use('/', index);
 
 // catch 404 and forward to error handler
