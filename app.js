@@ -5,12 +5,20 @@
  * @description Personal Portfolio website component with Business Contact List – Authentication
  */
 
+// modules required for the project
 let express = require('express');
 let path = require('path');
 let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+
+// authentication modules
+let session = require('express-session');
+let passport = require('passport');
+let passportlocal = require('passport-local');
+let flash = require('connect-flash');
+let LocalStrategy = passportlocal.Strategy;
 
 let index = require('./routes/index');
 
@@ -27,6 +35,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// setup session
+app.use(session({
+    secret: "1234567890",
+    saveUninitialized: true,
+    resave: true
+}));
+
+// initialize passport and flash
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport User Configuration
+let User = require('./models/users');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', index);
 
