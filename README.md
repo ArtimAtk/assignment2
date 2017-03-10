@@ -2,4 +2,4 @@
 
 ## Personal portfolio in Express with Business Contact List – Authentication
 
-Demo link: 
+Demo link: https://comp308-assignment2-liavontsi.herokuapp.com/
