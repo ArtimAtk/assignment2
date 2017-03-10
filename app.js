@@ -35,6 +35,7 @@ db.once('open', () => {
 
 // define routers
 let index = require('./routes/index');
+let businessContacs = require('./routes/businessContacts');
 
 let app = express();
 
@@ -70,6 +71,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // route redirects
 app.use('/', index);
+app.use('/businessContacts', businessContacs);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
