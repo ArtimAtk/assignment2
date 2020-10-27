@@ -1,9 +1,4 @@
-/**
-* @author Liavontsi Brechka
-* @studentID 300800345
-* @date April 10, 2017
-* @description Personal Portfolio websit component
-*/
+
 
 body {
     padding: 50px;
@@ -20,6 +15,9 @@ a {
 }
 
 .subtitle {
-    color: gray;
+    color: rgb(78, 122, 151);
     font-weight: 300;
+}
+.footer {
+    color: seagreen;
 }

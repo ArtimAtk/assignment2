@@ -1,9 +1,9 @@
 {
   "name": "assignment-2-authentication",
-  "description": "Personal Portfolio website component with Business Contact List – Authentication",
+  "description": "Assignment 2 – Authentication",
   "main": "server.js",
   "authors": [
-    "Liavontsi Brechka"
+    "Amrit Sapkota "
   ],
   "license": "ISC",
   "homepage": "",

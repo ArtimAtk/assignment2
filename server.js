@@ -1,15 +1,4 @@
-#!/usr/bin/env node
-/**
- * @author Liavontsi Brechka
- * @studentID 300800345
- * @date March 6, 2017
- * @description Personal Portfolio website component with Business Contact List – Authentication
- */
 
-
-/**
- * Module dependencies.
- */
 
 let app = require('./app');
 let debug = require('debug')('assignment-1-express-portfolio:server');

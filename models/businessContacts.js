@@ -1,9 +1,3 @@
-/**
- * @author Liavontsi Brechka
- * @studentID 300800345
- * @date March 6, 2017
- * @description Personal Portfolio website component with Business Contact List – Authentication
- */
 
 
 let mongoose = require('mongoose');
@@ -15,7 +9,7 @@ let businessContactsSchema = mongoose.Schema({
         email: String,
     },
     {
-        collection: "businessContacts"
+        collection: "businesscontact"
     });
 
-module.exports = mongoose.model('businessContacts', businessContactsSchema);
+module.exports = mongoose.model('businesscontact', businessContactsSchema);
